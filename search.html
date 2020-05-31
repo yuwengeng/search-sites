@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>搜多多</title>
     <style>
         div#main{
             height: 100vh;
@@ -15,6 +15,15 @@
         .form-inline{
             text-align: center;
             margin: 130px auto 20px;
+        }
+        #searchengineitems{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .pans{
+            margin: 16px auto;
+            text-align: center;
         }
     </style>
 </head>
@@ -39,12 +48,18 @@
 		        <input type="submit" value="知乎" id="zhihu" button="" class="btn btn-primary" onclick="displayDate(this)">
 		        <input type="submit" value="微博" id="weibo" button="" class="btn btn-primary" onclick="displayDate(this)">
 		        <input type="submit" value="豆瓣" id="douban" button="" class="btn btn-primary" onclick="displayDate(this)">
-		        <input type="submit" value="网盘" id="pangci" button="" class="btn btn-primary" onclick="displayDate(this)">
-		        <input type="submit" value="Github" id="Github" button="" class="btn btn-primary" onclick="displayDate(this)">
-		    </div>
+                <input type="submit" value="Github" id="Github" button="" class="btn btn-primary" onclick="displayDate(this)">
+            </div>
+            <div class="pans">
+                <input type="submit" value="大力盘" id="pangci" button="" class="btn btn-primary" onclick="displayDate(this)">
+                <input type="submit" value="fastsoso" id="fastsoso" button="" class="btn btn-primary" onclick="displayDate(this)">
+                <input type="submit" value="猪猪盘" id="zhuzhupan" button="" class="btn btn-primary" onclick="displayDate(this)">
+                <input type="submit" value="B站搜索" id="bilibili" button="" class="btn btn-primary" onclick="displayDate(this)">
+               
+            </div>
 		</div>
     </div>
-    <script>//search
+    <script>
         function displayDate(id){
             var searchengine=document.getElementById('searchengine');
             searchengine.innerHTML=id.value;
@@ -81,9 +96,19 @@
                 window.open("https://www.douban.com/search?q="+query);
             }else if(searchengine.value=="Github"){
                 window.open("https://github.com/search?q="+query);
+            // 网盘部分
+            }else if(searchengine.value=="大力盘"){
+                window.open("https://www.dalipan.com/search?keyword="+query);
+            }else if(searchengine.value=="fastsoso"){
+                window.open("https://www.fastsoso.cn/search?k="+query);
+            }else if(searchengine.id=="bilibili"){
+                window.open("https://search.bilibili.com/all?keyword="+query);
+            }else if(searchengine.id=="zhuzhupan"){
+                window.open("http://www.zhuzhupan.com/search?query="+query);
             }
         }
-        //    回车搜索
+
+        
         document.onkeyup = function (e) {  
             if (window.event)//如果window.event对象存在，就以此事件对象为准  
                 e = window.event;  
