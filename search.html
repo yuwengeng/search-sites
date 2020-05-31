@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div#main{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            /* margin: auto ; */
+        }
+        .form-inline{
+            text-align: center;
+            margin: 130px auto 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main">
+		<div id="searchid">		    
+	    	<div id="sform" class="form-inline" role="form">
+	    	        <input name="sears" id="search" type="text" placeholder="寻你所寻" autocomplete="off" class="form-control input-lg">
+	    	        <button id="searchengine" value="百度" onclick="FindData();">百度</button>
+	    	</div>		   
+		    <div id="searchengineitems">
+		        <input type="submit" value="百度" id="baidu" button="" class="btn btn-primary" onclick="displayDate(this)">
+		        <input type="submit" value="dev谷歌" id="google" button="" class="btn btn-primary" onclick="displayDate(this)">
+		        <input type="submit" value="Yandex" id="Yandex" button="" class="btn btn-primary" onclick="displayDate(this)">
+		        <input type="submit" value="搜狗" id="sougou" button="" class="btn btn-primary" onclick="displayDate(this)">
+		    	<input type="submit" value="必应" id="biying" button="" class="btn btn-primary" onclick="displayDate(this)">
+		    	<input type="submit" value="Magi" id="Magi" button="" class="btn btn-primary" onclick="displayDate(this)">
+		        <input type="submit" value="微信" id="weixin" button="" class="btn btn-primary" onclick="displayDate(this)">
+		        <input type="submit" value="京东" id="jd" button="" class="btn btn-primary" onclick="displayDate(this)">
+		        <input type="submit" value="淘宝" id="taobao" button="" class="btn btn-primary" onclick="displayDate(this)">
+		        <input type="submit" value="知乎" id="zhihu" button="" class="btn btn-primary" onclick="displayDate(this)">
+		        <input type="submit" value="微博" id="weibo" button="" class="btn btn-primary" onclick="displayDate(this)">
+		        <input type="submit" value="豆瓣" id="douban" button="" class="btn btn-primary" onclick="displayDate(this)">
+		        <input type="submit" value="网盘" id="pangci" button="" class="btn btn-primary" onclick="displayDate(this)">
+		        <input type="submit" value="Github" id="Github" button="" class="btn btn-primary" onclick="displayDate(this)">
+		    </div>
+		</div>
+    </div>
+    <script>//search
+        function displayDate(id){
+            var searchengine=document.getElementById('searchengine');
+            searchengine.innerHTML=id.value;
+            searchengine.value=id.value;
+        }
+        
+        function FindData(){
+            var search=document.getElementById('search');
+            var searchengine=document.getElementById('searchengine');
+            var query=search.value;
+            if(searchengine.value=="百度"){
+                window.open("https://www.baidu.com/s?wd="+query);
+            }else if(searchengine.id=="google"){
+                window.open("https://google.ywg.workers.dev/search?q="+query);
+            }else if(searchengine.value=="Yandex"){
+                window.open("https://yandex.com/search/?text="+query);
+            }else if(searchengine.value=="搜狗"){
+                window.open("https://www.sogou.com/web?query="+query);
+            }else if(searchengine.value=="必应"){
+                window.open("http://cn.bing.com/search?q="+query);
+            }else if(searchengine.value=="谷歌学术"){
+                window.open("https://magi.com/search?q="+query);
+            }else if(searchengine.value=="微信"){
+                window.open("http://weixin.sogou.com/weixin?query="+query);
+            }else if(searchengine.value=="京东"){
+                window.open("http://search.jd.com/Search?enc=utf-8&keyword="+query);
+            }else if(searchengine.value=="淘宝"){
+                window.open("https://s.taobao.com/search?q="+query);
+            }else if(searchengine.value=="知乎"){
+                window.open("https://www.zhihu.com/search?q="+query);
+            }else if(searchengine.value=="微博"){
+                window.open("http://s.weibo.com/weibo/"+query);
+            }else if(searchengine.value=="豆瓣"){
+                window.open("https://www.douban.com/search?q="+query);
+            }else if(searchengine.value=="Github"){
+                window.open("https://github.com/search?q="+query);
+            }
+        }
+        //    回车搜索
+        document.onkeyup = function (e) {  
+            if (window.event)//如果window.event对象存在，就以此事件对象为准  
+                e = window.event;  
+            var code = e.charCode || e.keyCode;  
+            if (code == 13) {  
+                FindData();
+            }  
+        } 	
+        </script>
+</body>
+</html>
