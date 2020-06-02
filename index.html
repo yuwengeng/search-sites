@@ -72,7 +72,7 @@
             var query=search.value;
             if(searchengine.value=="百度"){
                 window.open("https://www.baidu.com/s?wd="+query);
-            }else if(searchengine.id=="google"){
+            }else if(searchengine.value=="dev谷歌"){
                 window.open("https://google.ywg.workers.dev/search?q="+query);
             }else if(searchengine.value=="Yandex"){
                 window.open("https://yandex.com/search/?text="+query);
@@ -101,9 +101,9 @@
                 window.open("https://www.dalipan.com/search?keyword="+query);
             }else if(searchengine.value=="fastsoso"){
                 window.open("https://www.fastsoso.cn/search?k="+query);
-            }else if(searchengine.id=="bilibili"){
+            }else if(searchengine.value=="B站搜索"){
                 window.open("https://search.bilibili.com/all?keyword="+query);
-            }else if(searchengine.id=="zhuzhupan"){
+            }else if(searchengine.value=="猪猪盘"){
                 window.open("http://www.zhuzhupan.com/search?query="+query);
             }
         }
