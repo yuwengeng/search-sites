@@ -37,7 +37,8 @@
 	    	</div>		   
 		    <div id="searchengineitems">
 		        <input type="submit" value="百度" id="baidu" button="" class="btn btn-primary" onclick="displayDate(this)">
-		        <input type="submit" value="dev谷歌" id="google" button="" class="btn btn-primary" onclick="displayDate(this)">
+<!-- 		        <input type="submit" value="dev谷歌" id="google" button="" class="btn btn-primary" onclick="displayDate(this)"> -->
+			<input type="submit" value="谷歌" id="google" button="" class="btn btn-primary" onclick="displayDate(this)">
 		        <input type="submit" value="Yandex" id="Yandex" button="" class="btn btn-primary" onclick="displayDate(this)">
 		        <input type="submit" value="搜狗" id="sougou" button="" class="btn btn-primary" onclick="displayDate(this)">
 		    	<input type="submit" value="必应" id="biying" button="" class="btn btn-primary" onclick="displayDate(this)">
@@ -73,7 +74,10 @@
             if(searchengine.value=="百度"){
                 window.open("https://www.baidu.com/s?wd="+query);
             }else if(searchengine.value=="dev谷歌"){
-                window.open("https://google.ywg.workers.dev/search?q="+query);
+                window.open("https://gg.ywg.workers.dev/search?q="+query);
+	    }else if(searchengine.value=="谷歌"){
+                window.open("https://go.weihanli.xyz/search?q="+query);    
+		    
             }else if(searchengine.value=="Yandex"){
                 window.open("https://yandex.com/search/?text="+query);
             }else if(searchengine.value=="搜狗"){
