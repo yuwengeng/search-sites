@@ -57,6 +57,7 @@
                 <input type="submit" value="猪猪盘" id="zhuzhupan" button="" class="btn btn-primary" onclick="displayDate(this)">
                 <input type="submit" value="酷搜" id="zhuzhupan" class="btn btn-primary" onclick="displayDate(this)">
                 <input type="submit" value="B站搜索" id="bilibili" button="" class="btn btn-primary" onclick="displayDate(this)">
+                <input type="submit" value="热榜搜" id="tophub" buttobtn-primary" onclick="displayDate(this)">
                
             </div>
 		</div>
@@ -112,6 +113,8 @@
                 window.open("http://www.zhuzhupan.com/search?query="+query);
             }else if(searchengine.value=="酷搜"){
                 window.open("https://www.kolsou.com/search?q="+query);
+            }else if(searchengine.value=="热榜搜"){
+                window.open("https://tophub.today/search?q="+query);
             }
         }
 
