@@ -21,7 +21,7 @@
             justify-content: center;
             flex-wrap: wrap;
         }
-        .pans{
+        .pans,.jike{
             margin: 16px auto;
             text-align: center;
         }
@@ -32,12 +32,12 @@
     <div id="main">
 		<div id="searchid">		    
 	    	<div id="sform" class="form-inline" role="form">
-	    	        <input name="sears" id="search" type="text" placeholder="寻你所寻" autocomplete="off" class="form-control input-lg">
+	    	        <input name="sears" id="search" type="text" placeholder="find it" autocomplete="off" class="form-control input-lg">
 	    	        <button id="searchengine" value="百度" onclick="FindData();">百度</button>
 	    	</div>		   
 		    <div id="searchengineitems">
 		        <input type="submit" value="百度" id="baidu" button="" class="btn btn-primary" onclick="displayDate(this)">
-<!-- 		        <input type="submit" value="dev谷歌" id="google" button="" class="btn btn-primary" onclick="displayDate(this)"> -->
+<!-- 		        <input type="submit" value="dev谷歌" i="gogle" button="" class="btn btn-primary" onclick="displayDate(this)"> -->
 			<input type="submit" value="谷歌" id="google" button="" class="btn btn-primary" onclick="displayDate(this)">
 		        <input type="submit" value="Yandex" id="Yandex" button="" class="btn btn-primary" onclick="displayDate(this)">
 		        <input type="submit" value="搜狗" id="sougou" button="" class="btn btn-primary" onclick="displayDate(this)">
@@ -49,7 +49,6 @@
 		        <input type="submit" value="知乎" id="zhihu" button="" class="btn btn-primary" onclick="displayDate(this)">
 		        <input type="submit" value="微博" id="weibo" button="" class="btn btn-primary" onclick="displayDate(this)">
 		        <input type="submit" value="豆瓣" id="douban" button="" class="btn btn-primary" onclick="displayDate(this)">
-                <input type="submit" value="Github" id="Github" button="" class="btn btn-primary" onclick="displayDate(this)">
             </div>
             <div class="pans">
                 <input type="submit" value="大力盘" id="pangci" button="" class="btn btn-primary" onclick="displayDate(this)">
@@ -57,9 +56,12 @@
                 <input type="submit" value="猪猪盘" id="zhuzhupan" button="" class="btn btn-primary" onclick="displayDate(this)">
                 <input type="submit" value="酷搜" id="zhuzhupan" class="btn btn-primary" onclick="displayDate(this)">
                 <input type="submit" value="B站搜索" id="bilibili" button="" class="btn btn-primary" onclick="displayDate(this)">
-                <input type="submit" value="热榜搜" id="tophub" buttobtn-primary" onclick="displayDate(this)">
-               
+                <input type="submit" value="热榜搜" id="tophub" buttobtn-primary" onclick="displayDate(this)"> 
             </div>
+	    <div class="jike">
+                <input type="submit" value="极客搜索" id="tophub" buttobtn-primary" onclick="displayDate(this)"> 	
+                <input type="submit" value="Github" id="Github" button="" class="btn btn-primary" onclick="displayDate(this)">		
+            <div>			 
 		</div>
     </div>
     <script>
@@ -115,7 +117,10 @@
                 window.open("https://www.kolsou.com/search?q="+query);
             }else if(searchengine.value=="热榜搜"){
                 window.open("https://tophub.today/search?q="+query);
+            }else if(searchengine.value=="极客搜索"){
+                window.open("https://s.geekbang.org/search/c=0/k="+query+'t=');
             }
+							    
         }
 
         
