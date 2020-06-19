@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0,  minimum-scale=1.0">
     <title>搜多多</title>
     <style>
 	div.logo{
 		text-align:center;
 		margin-top: 66px;
-	 }
+	 }    
+	.logo img {
+		height: 80px;
+	}
         div#main{
 /*             height: 100vh; */
             display: flex;
@@ -51,7 +54,7 @@
 
 		<div id="searchid">		    
 	    	<div id="sform" class="form-inline" role="form">
-	    	        <input name="sears" id="search" type="text" placeholder="find it" autocomplete="off" class="form-control input-lg">
+	    	        <input name="sears" id="search" type="text" placeholder="find it" onfocus="this.placeholder=''" onblur="this.placeholder='find it'" autocomplete="off" class="form-control input-lg">
 	    	        <button id="searchengine" value="百度" onclick="FindData();">百度</button>
 	    	</div>		   
 		<div id="searchengineitems">
