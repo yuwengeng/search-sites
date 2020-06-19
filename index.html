@@ -35,10 +35,12 @@
 	    	        <input name="sears" id="search" type="text" placeholder="find it" autocomplete="off" class="form-control input-lg">
 	    	        <button id="searchengine" value="百度" onclick="FindData();">百度</button>
 	    	</div>		   
-		    <div id="searchengineitems">
+		<div id="searchengineitems">
 		        <input type="submit" value="百度" id="baidu" button="" class="btn btn-primary" onclick="displayDate(this)">
 <!-- 		        <input type="submit" value="dev谷歌" i="gogle" button="" class="btn btn-primary" onclick="displayDate(this)"> -->
 			<input type="submit" value="谷歌" id="google" button="" class="btn btn-primary" onclick="displayDate(this)">
+			<input type="submit" value="多吉" id="duoji" button="" class="btn btn-primary" onclick="displayDate(this)">
+			
 		        <input type="submit" value="Yandex" id="Yandex" button="" class="btn btn-primary" onclick="displayDate(this)">
 		        <input type="submit" value="搜狗" id="sougou" button="" class="btn btn-primary" onclick="displayDate(this)">
 		    	<input type="submit" value="必应" id="biying" button="" class="btn btn-primary" onclick="displayDate(this)">
@@ -60,9 +62,10 @@
             </div>
 	    <div class="jike">
                 <input type="submit" value="极客搜索" id="tophub" buttobtn-primary" onclick="displayDate(this)"> 	
-                <input type="submit" value="Github" id="Github" button="" class="btn btn-primary" onclick="displayDate(this)">		
-            <div>			 
-		</div>
+                <input type="submit" value="Github" id="Github" button="" class="btn btn-primary" onclick="displayDate(this)">	
+		<input type="submit" value="鱼塘搜索" id="fish" button="" class="btn btn-primary" onclick="displayDate(this)">
+     			 
+	    </div>
     </div>
     <script>
         function displayDate(id){
@@ -81,7 +84,8 @@
                 window.open("https://gg.ywg.workers.dev/search?q="+query);
 	    }else if(searchengine.value=="谷歌"){
                 window.open("https://go.weihanli.xyz/search?q="+query);    
-		    
+	    }else if(searchengine.value=="多吉"){
+                window.open("https://www.dogedoge.com/results?q="+query);  	    
             }else if(searchengine.value=="Yandex"){
                 window.open("https://yandex.com/search/?text="+query);
             }else if(searchengine.value=="搜狗"){
@@ -119,10 +123,11 @@
                 window.open("https://tophub.today/search?q="+query);
             }else if(searchengine.value=="极客搜索"){
                 window.open("https://s.geekbang.org/search/c=0/k="+query+'/t=');
+            }else if(searchengine.value=="鱼塘搜索"){
+                window.open("https://mo.fish/main/search/"+query);
             }
 							    
         }
-
         
         document.onkeyup = function (e) {  
             if (window.event)//如果window.event对象存在，就以此事件对象为准  
