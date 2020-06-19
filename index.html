@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>搜多多</title>
     <style>
+	div.logo{
+		text-align:center;
+		margin:20px;
+	 }
         div#main{
-            height: 100vh;
+/*             height: 100vh; */
             display: flex;
             justify-content: center;
             align-content: center;
             /* margin: auto ; */
         }
-	.logo{
-		text-align:center;
-	 }
+
         .form-inline{
             text-align: center;
             margin: 130px auto 20px;
@@ -31,11 +33,11 @@
     </style>
 </head>
 <body>
-
+    <div class="logo">
+         <img src="https://nav.hiqq.com.cn/static/logo2.png">
+    </div>
     <div id="main">
-	    	<div class="logo">
-	    		<img src="https://nav.hiqq.com.cn/static/logo2.png">
-	    	</div>
+
 		<div id="searchid">		    
 	    	<div id="sform" class="form-inline" role="form">
 	    	        <input name="sears" id="search" type="text" placeholder="find it" autocomplete="off" class="form-control input-lg">
