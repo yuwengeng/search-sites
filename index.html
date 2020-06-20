@@ -62,7 +62,8 @@
 <!-- 		        <input type="submit" value="dev谷歌" i="gogle" button="" class="btn btn-primary" onclick="displayDate(this)"> -->
 			<input type="submit" value="谷歌" id="google" button="" class="btn btn-primary" onclick="displayDate(this)">
 			<input type="submit" value="多吉" id="duoji" button="" class="btn btn-primary" onclick="displayDate(this)">
-			
+			<input type="submit" value="360搜索" id="duoji" button="" class="btn btn-primary" onclick="displayDate(this)">
+			<input type="submit" value="神马" id="duoji" button="" class="btn btn-primary" onclick="displayDate(this)">
 		        <input type="submit" value="Yandex" id="Yandex" button="" class="btn btn-primary" onclick="displayDate(this)">
 		        <input type="submit" value="搜狗" id="sougou" button="" class="btn btn-primary" onclick="displayDate(this)">
 		    	<input type="submit" value="必应" id="biying" button="" class="btn btn-primary" onclick="displayDate(this)">
@@ -107,7 +108,11 @@
 	    }else if(searchengine.value=="谷歌"){
                 window.open("https://google.ywg.workers.dev/search?q="+query);    
 	    }else if(searchengine.value=="多吉"){
-                window.open("https://www.dogedoge.com/results?q="+query);  	    
+                window.open("https://www.dogedoge.com/results?q="+query);  
+	    }else if(searchengine.value=="360搜索"){
+                window.open("https://www.so.com/s?q="+query);  
+	    }else if(searchengine.value=="神马"){
+                window.open("https://yz.m.sm.cn/s?q="+query);    
             }else if(searchengine.value=="Yandex"){
                 window.open("https://yandex.com/search/?text="+query);
             }else if(searchengine.value=="搜狗"){
