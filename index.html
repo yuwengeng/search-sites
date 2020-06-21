@@ -98,10 +98,12 @@
 	    </div>
     </div>
     <script>
-	document.keydown = function(event){
-		if(event.keyCode==111) document.getElementById("search").focus();
-			
-	}	
+        window.onkeydown = function (e) {  
+            if (window.event)
+                e = window.event;  
+            let code = e.charCode || e.keyCode;  
+            if (code == 111) document.getElementById("search").focus();  
+        }
         function displayDate(id){
             var searchengine=document.getElementById('searchengine');
             searchengine.innerHTML=id.value;
@@ -174,8 +176,8 @@
                 e = window.event;  
             var code = e.charCode || e.keyCode;  
             if (code == 13) FindData();           
-	    else if(code == 111) document.getElementById("search").focus(); 
-        } 	
+        } 
+  	
         </script>
 </body>
 </html>
