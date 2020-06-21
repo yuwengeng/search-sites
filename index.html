@@ -29,7 +29,8 @@
 	    text-align: center;
  	    line-height: 32px;	
 	    height: 32px;
-	    font-size: 18px;	
+	    font-size: 18px;
+	    color: #999;
 	}
 	#searchengine{
 	    line-height: 32px;	
@@ -102,7 +103,7 @@
             var searchengine=document.getElementById('searchengine');
             var query=search.value;
             if(searchengine.value=="百度"){
-                window.open("https://www.baidu.com/s?wd="+query);
+                window.open("https://www.baidu.com/s?wd="+query+" -广告 -推广");
             }else if(searchengine.value=="dev谷歌"){
                 window.open("https://search.sxisa.com/search?q="+query);
 	    }else if(searchengine.value=="谷歌"){
