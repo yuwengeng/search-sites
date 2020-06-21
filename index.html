@@ -93,6 +93,7 @@
                 <input type="submit" value="极客搜索" id="tophub" buttobtn-primary" onclick="displayDate(this)"> 	
                 <input type="submit" value="Github" id="Github" button="" class="btn btn-primary" onclick="displayDate(this)">	
 		<input type="submit" value="鱼塘搜索" id="fish" button="" class="btn btn-primary" onclick="displayDate(this)">
+		<input type="submit" value="V2" id="Github" button="" class="btn btn-primary" onclick="displayDate(this)">
      			 
 	    </div>
     </div>
@@ -162,7 +163,9 @@
                 window.open("https://s.geekbang.org/search/c=0/k="+query+'/t=');
             }else if(searchengine.value=="鱼塘搜索"){
                 window.open("https://mo.fish/main/search/"+query);
-            }
+            }else if(searchengine.value=="V2"){
+                window.open("https://google.ywg.workers.dev/search?q=site:v2ex.com/t "+query);
+	    }
 							    
         }
         
@@ -170,9 +173,8 @@
             if (window.event)//如果window.event对象存在，就以此事件对象为准  
                 e = window.event;  
             var code = e.charCode || e.keyCode;  
-            if (code == 13) {  
-                FindData();
-            }  
+            if (code == 13) FindData();           
+	    else if(code == 111) document.getElementById("search").focus(); 
         } 	
         </script>
 </body>
