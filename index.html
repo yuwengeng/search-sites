@@ -97,6 +97,10 @@
 	    </div>
     </div>
     <script>
+	document.keydown = function(event){
+		if(event.keyCode==111) document.getElementById("search").focus();
+			
+	}	
         function displayDate(id){
             var searchengine=document.getElementById('searchengine');
             searchengine.innerHTML=id.value;
