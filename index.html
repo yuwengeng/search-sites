@@ -6,12 +6,12 @@
     <title>搜多多</title>
     <style>
 	body{	
-		font-family: "STKaiti", "Microsoft Yahei";
+		font-family: "STKaiti";
 		background:url('https://api.uixsj.cn/bing/bing.php') no-repeat;
 		background-size:cover;
-		width:100%;
-                height:100%;
-		overflow: hidden;
+		width:100vw;
+                height:100vh;
+		background-position: center top;
 		margin:0;
 	}
 	div.logo{
@@ -67,7 +67,7 @@
 
 		<div id="searchid">		    
 	    	<div id="sform" class="form-inline" role="form">
-	    	        <input name="sears" id="search" type="search" placeholder="find it" onfocus="this.placeholder=''" onblur="this.placeholder='find it'" autocomplete="off" class="form-control input-lg">
+	    	        <input name="sears" id="search" type="text" placeholder="find it" onfocus="this.placeholder=''" onblur="this.placeholder='find it'" autocomplete="off" class="form-control input-lg">
 	    	        <button id="searchengine" value="百度" onclick="FindData();">百度</button>
 	    	</div>		   
 		<div id="searchengineitems">
