@@ -60,7 +60,7 @@
 
 		<div id="searchid">		    
 	    	<div id="sform" class="form-inline" role="form">
-	    	        <input name="sears" id="search" type="text" placeholder="find it" onfocus="this.placeholder=''" onblur="this.placeholder='find it'" autocomplete="off" class="form-control input-lg">
+	    	        <input name="sears" id="search" type="search" placeholder="find it" onfocus="this.placeholder=''" onblur="this.placeholder='find it'" autocomplete="off" class="form-control input-lg">
 	    	        <button id="searchengine" value="百度" onclick="FindData();">百度</button>
 	    	</div>		   
 		<div id="searchengineitems">
@@ -69,7 +69,6 @@
 			<input type="submit" value="谷歌" id="google" button="" class="btn btn-primary" onclick="displayDate(this)">
 			<input type="submit" value="多吉" id="duoji" button="" class="btn btn-primary" onclick="displayDate(this)">
 			<input type="submit" value="360搜索" id="duoji" button="" class="btn btn-primary" onclick="displayDate(this)">
-			<input type="submit" value="神马" id="duoji" button="" class="btn btn-primary" onclick="displayDate(this)">
 		        <input type="submit" value="Yandex" id="Yandex" button="" class="btn btn-primary" onclick="displayDate(this)">
 		        <input type="submit" value="搜狗" id="sougou" button="" class="btn btn-primary" onclick="displayDate(this)">
 		    	<input type="submit" value="必应" id="biying" button="" class="btn btn-primary" onclick="displayDate(this)">
@@ -96,13 +95,18 @@
 		<input type="submit" value="V2" id="Github" button="" class="btn btn-primary" onclick="displayDate(this)">
      			 
 	    </div>
+	    <div class='life'>
+	    	<input type="submit" value="神马" id="duoji" button="" class="btn btn-primary" onclick="displayDate(this)">
+		<input type="submit" value="头条" id="duoji" button="" class="btn btn-primary" onclick="displayDate(this)">
+
+	    </div>
     </div>
     <script>
         window.onkeydown = function (e) {  
-            if (window.event)
-                e = window.event;  
-            let code = e.charCode || e.keyCode;  
-            if (code == 111) document.getElementById("search").focus();  
+            let code = e.keyCode;  
+            if (code == 191 || code == 32) {
+		    document.getElementById("search").focus();  
+	    }
         }
         function displayDate(id){
             var searchengine=document.getElementById('searchengine');
@@ -167,6 +171,8 @@
                 window.open("https://mo.fish/main/search/"+query);
             }else if(searchengine.value=="V2"){
                 window.open("https://google.ywg.workers.dev/search?q=site:v2ex.com/t "+query);
+	    }else if(searchengine.value=="头条"){
+                window.open("https://m.toutiao.com/search?keyword="+query);
 	    }
 							    
         }
