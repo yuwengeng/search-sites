@@ -16,15 +16,14 @@
 		background-position: center top;
 		margin:0;
 	}
-	div.logo{
+/* 	div.logo{
 		text-align:center;
 		margin-top: 66px;
 	 }    
 	.logo img {
 		height: 80px;
-	}
+	} */
         div#main{
-/*             height: 100vh; */
             display: flex;
             justify-content: center;
             align-content: center;
@@ -64,14 +63,14 @@
     </style>
 </head>
 <body>
-    <div class="logo">
+<!--     <div class="logo">
          <img src="https://nav.hiqq.com.cn/static/logo2.png">
-    </div>
+    </div> -->
     <div id="main">
 
 		<div id="searchid">		    
 	    	<div id="sform" class="form-inline" role="form">
-	    	        <input name="sears" id="search" type="text" placeholder="find it" onfocus="this.placeholder=''" onblur="this.placeholder='find it'" autocomplete="off" class="form-control input-lg">
+	    	        <input name="sears" id="search" type="text" placeholder="find it" autofocus onfocus="this.placeholder=''" onblur="this.placeholder='find it'" autocomplete="off" class="form-control input-lg">
 	    	        <button id="searchengine" value="百度" onclick="FindData();">百度</button>
 	    	</div>		   
 		<div id="searchengineitems">
