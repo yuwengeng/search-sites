@@ -99,7 +99,9 @@
                 <input type="submit" value="热榜搜" id="tophub" buttobtn-primary" onclick="displayDate(this)"> 
             </div>
 	    <div class="jike">
-                <input type="submit" value="极客搜索" id="tophub" buttobtn-primary" onclick="displayDate(this)"> 	
+                <input type="submit" value="极客搜索" id="tophub" buttobtn-primary" onclick="displayDate(this)"> 
+		<input type="submit" value="阿里云" id="tophub" buttobtn-primary" onclick="displayDate(this)">    
+		<input type="submit" value="腾讯云" id="tophub" buttobtn-primary" onclick="displayDate(this)">											  
                 <input type="submit" value="Github" id="Github" button="" class="btn btn-primary" onclick="displayDate(this)">	
 		<input type="submit" value="鱼塘搜索" id="fish" button="" class="btn btn-primary" onclick="displayDate(this)">
 		<input type="submit" value="V2" id="Github" button="" class="btn btn-primary" onclick="displayDate(this)">
@@ -178,7 +180,11 @@
                 window.open("https://tophub.today/search?q="+query);
             }else if(searchengine.value=="极客搜索"){
                 window.open("https://s.geekbang.org/search/c=0/k="+query+'/t=');
-            }else if(searchengine.value=="鱼塘搜索"){
+            }else if(searchengine.value=="阿里云"){
+                window.open("https://developer.aliyun.com/search?q="+query);
+	    }else if(searchengine.value=="腾讯云"){
+                window.open("https://cloud.tencent.com/developer/search/article-"+query);
+	    }else if(searchengine.value=="鱼塘搜索"){
                 window.open("https://mo.fish/main/search/"+query);
             }else if(searchengine.value=="V2"){
                 window.open("https://google.ywg.workers.dev/search?q=site:v2ex.com/t "+query);
