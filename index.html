@@ -93,6 +93,7 @@
             <div class="pans">
                 <input type="submit" value="大力盘" id="pangci" button="" class="btn btn-primary" onclick="displayDate(this)">
 		<input type="submit" value="大圣盘" id="pangci" button="" class="btn btn-primary" onclick="displayDate(this)">
+                <input type="submit" value="罗马盘" id="pangci" button="" class="btn btn-primary" onclick="displayDate(this)">
 		<input type="submit" value="Day搜" id="pangci" button="" class="btn btn-primary" onclick="displayDate(this)">    
                 <input type="submit" value="fastsoso" id="fastsoso" button="" class="btn btn-primary" onclick="displayDate(this)">
                 <input type="submit" value="猪猪盘" id="zhuzhupan" button="" class="btn btn-primary" onclick="displayDate(this)">
@@ -172,6 +173,8 @@
                 window.open("https://www.dalipan.com/search?keyword="+query+"&time=3");  
 	    }else if(searchengine.value=="大圣盘"){
                 window.open("https://dashengpan.com/search?keyword="+query+"&time=3"); 	
+	    }else if(searchengine.value=="罗马盘"){
+                window.open("https://www.luomapan.com/search?keyword="+query); 
 	    }else if(searchengine.value=="Day搜"){
                 window.open("http://www.daysou.com/s?q="+query+"&start=0&isget=1&tp=all&cl=0&line=3");    
             }else if(searchengine.value=="fastsoso"){
