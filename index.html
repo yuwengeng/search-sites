@@ -102,6 +102,7 @@
             </div>
 	    <div class="jike">
                 <input type="submit" value="极客搜索" id="tophub" buttobtn-primary" onclick="displayDate(this)"> 
+		<input type="submit" value="开发者头条" id="tophub" buttobtn-primary" onclick="displayDate(this)">
 		<input type="submit" value="阿里云" id="tophub" buttobtn-primary" onclick="displayDate(this)">    
 		<input type="submit" value="腾讯云" id="tophub" buttobtn-primary" onclick="displayDate(this)">											  
                 <input type="submit" value="Github" id="Github" button="" class="btn btn-primary" onclick="displayDate(this)">	
@@ -188,9 +189,10 @@
                 window.open("https://www.kolsou.com/search?q="+query);
             }else if(searchengine.value=="热榜搜"){
                 window.open("https://tophub.today/search?q="+query);
-            }else if(searchengine.value=="极客搜索"){
                 window.open("https://s.geekbang.org/search/c=0/k="+query+'/t=');
-            }else if(searchengine.value=="阿里云"){
+            }else if(searchengine.value=="开发者头条"){
+                window.open("https://toutiao.io/search?q="+query);
+	    }else if(searchengine.value=="阿里云"){
                 window.open("https://developer.aliyun.com/search?q="+query);
 	    }else if(searchengine.value=="腾讯云"){
                 window.open("https://cloud.tencent.com/developer/search/article-"+query);
