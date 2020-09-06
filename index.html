@@ -84,8 +84,7 @@
 		        <input type="submit" value="搜狗" id="sougou" button="" class="btn btn-primary" onclick="displayDate(this)">
 		    	<input type="submit" value="必应" id="biying" button="" class="btn btn-primary" onclick="displayDate(this)">
 		    	<input type="submit" value="Magi" id="Magi" button="" class="btn btn-primary" onclick="displayDate(this)">
-		        <input type="submit" value="微信" id="weixin" button="" class="btn btn-primary" onclick="displayDate(this)">
-		        <input type="submit" value="京东" id="jd" button="" class="btn btn-primary" onclick="displayDate(this)">
+		        <input type="submit" value="微信" id="weixin" button="" class="btn btn-primary" onclick="displayDate(this)">	        
 		        <input type="submit" value="知乎" id="zhihu" button="" class="btn btn-primary" onclick="displayDate(this)">
 		        <input type="submit" value="微博" id="weibo" button="" class="btn btn-primary" onclick="displayDate(this)">
 		        <input type="submit" value="豆瓣" id="douban" button="" class="btn btn-primary" onclick="displayDate(this)">
@@ -113,6 +112,8 @@
 	    <div class='life'>
 	    	<input type="submit" value="神马" id="duoji" button="" class="btn btn-primary" onclick="displayDate(this)">
 		<input type="submit" value="头条" id="duoji" button="" class="btn btn-primary" onclick="displayDate(this)">
+                <input type="submit" value="值得买" id="duoji" button="" class="btn btn-primary" onclick="displayDate(this)">
+	        <input type="submit" value="京东" id="jd" button="" class="btn btn-primary" onclick="displayDate(this)">															 
 
 	    </div>
     </div>
@@ -202,6 +203,8 @@
                 window.open("https://google.ywg.workers.dev/search?q=site:v2ex.com/t "+query);
 	    }else if(searchengine.value=="头条"){
                 window.open("https://m.toutiao.com/search?keyword="+query);
+	    }else if(searchengine.value=="值得买"){
+                window.open("https://search.smzdm.com/?c=home&s="+query+"&v=b");
 	    }
 							    
         }
