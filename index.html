@@ -16,13 +16,9 @@
 		background-position: center top;
 		margin:0;
 	}
-/* 	div.logo{
-		text-align:center;
-		margin-top: 66px;
-	 }    
-	.logo img {
-		height: 80px;
-	} */
+	.animate{
+	    z-index:-99;
+	    }
         div#main{
             display: flex;
             justify-content: center;
@@ -67,8 +63,8 @@
          <img src="https://nav.hiqq.com.cn/static/logo2.png">
     </div> -->
     <div id="main">
-
-		<div id="searchid">		    
+		
+		<div class="animate">		    
 	    	<div id="sform" class="form-inline" role="form">
 	    	        <input name="sears" id="search" type="text" placeholder="find it" autofocus onfocus="this.placeholder=''" onblur="this.placeholder='find it'" autocomplete="off" class="form-control input-lg">
 	    	        <button id="searchengine" value="百度" onclick="FindData();">百度</button>
@@ -120,7 +116,7 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/yuwengeng/jscdn/jquery.fireworks.js"></script>
     <script type="text/javascript">
-	$('#main').fireworks({ 
+	$('#animate').fireworks({ 
 	  sound: false, 
 	  opacity: 0.9, 
 	  width: '100%', 
