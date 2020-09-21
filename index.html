@@ -65,8 +65,8 @@
 		
 		<div class="items">		
 		<div id="searchengineitems">
-		        <input type="submit" value="百度" id="baidu" button="" class="btn btn-primary" >
-<!-- 		        <input type="submit" value="dev谷歌" i="gogle" button="" class="btn btn-primary" onclick="displayDate(this)"> -->
+		        <input type="submit" value="百度" id="baidu" class="btn btn-primary" >
+		        <input type="submit" value="Searx" class="btn btn-primary">
 			<input type="submit" value="谷歌" id="google" class="btn btn-primary" >
 			<input type="submit" value="Google2" id="taobao" button="" class="btn btn-primary" >
 			<input type="submit" value="多吉" id="duoji" button="" class="btn btn-primary" >
@@ -135,7 +135,9 @@
             var query=search.value;
             if(searchengine.value=="百度"){
                 window.open("https://www.baidu.com/s?wd="+query+" -广告 -推广");
-            }else if(searchengine.value=="dev谷歌"){
+            }else if(searchengine.value=="Searx"){
+                window.open("https://searx.gnu.style/?q="+query);
+	    }else if(searchengine.value=="dev谷歌"){
                 window.open("https://search.sxisa.com/search?q="+query);
 	    }else if(searchengine.value=="谷歌"){
                 window.open("https://google.ywg.workers.dev/search?q="+query);    
@@ -188,6 +190,7 @@
                 window.open("https://www.kolsou.com/search?q="+query);
             }else if(searchengine.value=="热榜搜"){
                 window.open("https://tophub.today/search?q="+query);
+	    }else if(searchengine.value=="极客搜索"){
                 window.open("https://s.geekbang.org/search/c=0/k="+query+'/t=');
             }else if(searchengine.value=="开发者头条"){
                 window.open("https://toutiao.io/search?q="+query);
