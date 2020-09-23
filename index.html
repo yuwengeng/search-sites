@@ -79,10 +79,11 @@
 		        <input type="submit" value="知乎" id="zhihu" button="" class="btn btn-primary" >
 		        <input type="submit" value="微博" id="weibo" button="" class="btn btn-primary" >
 		        <input type="submit" value="豆瓣" id="douban" button="" class="btn btn-primary">
+                        <input type="submit" value="贴吧" button="" class="btn btn-primary">
             </div>
             <div class="pans">
                 <input type="submit" value="大力盘" id="pangci" class="btn btn-primary" >
-		<input type="submit" value="大圣盘" id="pangci" class="btn btn-primary" >
+		<input type="submit" value="搜云" class="btn btn-primary" >
 		<input type="submit" value="Day搜" id="pangci" class="btn btn-primary" >    
                 <input type="submit" value="fastsoso" id="fastsoso" class="btn btn-primary" >
                 <input type="submit" value="猪猪盘" id="zhuzhupan" class="btn btn-primary">
@@ -169,13 +170,15 @@
                 window.open("http://s.weibo.com/weibo/"+query);
             }else if(searchengine.value=="豆瓣"){
                 window.open("https://www.douban.com/search?q="+query);
-            }else if(searchengine.value=="Github"){
+            }else if(searchengine.value=="贴吧"){
+                window.open(`http://zhannei.baidu.com/cse/site?q=${query}&click=1&cc=tieba.baidu.com&s=&nsid=`);
+	    }else if(searchengine.value=="Github"){
                 window.open("https://github.com/search?q="+query);
             // 网盘部分
             }else if(searchengine.value=="大力盘"){
                 window.open("https://www.dalipan.com/search?keyword="+query+"&time=3");  
-	    }else if(searchengine.value=="大圣盘"){
-                window.open("https://dashengpan.com/search?keyword="+query+"&time=3"); 	
+	    }else if(searchengine.value=="搜云"){
+                window.open("https://www.wosouyun.com/wd/"+query); 	
 	    }else if(searchengine.value=="罗马盘"){
                 window.open("https://www.luomapan.com/search?keyword="+query); 
 	    }else if(searchengine.value=="Day搜"){
