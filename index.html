@@ -69,204 +69,110 @@
 </head>
 <body>
 
-    <div id="main">
+ <div id="main">
 		<div id="searchid">	    
 	    	<div id="sform" class="form-inline" role="form">
 	    	        <input name="sears" id="search" type="text" placeholder="find it" autofocus onfocus="this.placeholder=''" onblur="this.placeholder='find it'" autocomplete="off" class="form-control input-lg">
 	    	        <button id="searchengine" value="百度" onclick="FindData();">百度</button>
 	    	</div>	
 		
-		<div class="items">		
-		<div id="searchengineitems">
-		        <input type="submit" value="百度" id="baidu" class="btn btn-primary" >
-			<input type="submit" value="秘迹" class="btn btn-primary" >
-		        <input type="submit" value="Searx" class="btn btn-primary">
-			<input type="submit" value="谷歌" id="google" class="btn btn-primary" >
-			<input type="submit" value="Google2" id="taobao" button="" class="btn btn-primary" >
-			<input type="submit" value="多吉" id="duoji" button="" class="btn btn-primary" >
-			<input type="submit" value="360搜索" id="duoji" button="" class="btn btn-primary" >
-		        <input type="submit" value="Yandex" id="Yandex" button="" class="btn btn-primary" >
-		        <input type="submit" value="搜狗" id="sougou" button="" class="btn btn-primary" >
-		    	<input type="submit" value="必应" id="biying" button="" class="btn btn-primary" >
-		    	<input type="submit" value="Magi" id="Magi" button="" class="btn btn-primary" >
-		        <input type="submit" value="微信" id="weixin" button="" class="btn btn-primary" >	        
-		        <input type="submit" value="知乎" id="zhihu" button="" class="btn btn-primary" >
-                        <input type="submit" value="贴吧" button="" class="btn btn-primary">
-            </div>
+	<div class="items">
+            <div class="all">
+            </div>  
             <div class="pans">
-                <input type="submit" value="大力盘" id="pangci" class="btn btn-primary" >
-		<input type="submit" value="飞飞盘" class="btn btn-primary" 
-		<input type="submit" value="搜云" class="btn btn-primary" >
-		<input type="submit" value="Day搜" id="pangci" class="btn btn-primary" >    
-                <input type="submit" value="fastsoso" id="fastsoso" class="btn btn-primary" >
-                <input type="submit" value="猪猪盘" id="zhuzhupan" class="btn btn-primary">
-                <input type="submit" value="酷搜" id="zhuzhupan" class="btn btn-primary" >
-                <input type="submit" value="B站搜索" id="bilibili" class="btn btn-primary" >
-                <input type="submit" value="热榜搜" class="btn btn-primary" > 
-		<input type="submit" value="谷歌云" class="btn btn-primary" >
             </div>
-	    <div class="jike">
-                <input type="submit" value="极客搜索" class="btn btn-primary"> 
-		<input type="submit" value="开发者头条" id="tophub" class="btn btn-primary">
-		<input type="submit" value="阿里云" class="btn btn-primary" >    
-		<input type="submit" value="腾讯云" class="btn btn-primary">											  
-                <input type="submit" value="Github" id="Github" class="btn btn-primary" >	
-		<input type="submit" value="鱼塘搜索" id="fish" class="btn btn-primary" >
-		<input type="submit" value="V2" id="Github" button="" class="btn btn-primary" >
-     			 
-	    </div>
-	    <div class='life'>
-	    	<input type="submit" value="神马" id="duoji" button="" class="btn btn-primary" >
-		<input type="submit" value="头条" id="duoji" button="" class="btn btn-primary" >
-		<input type="submit" value="微博" id="weibo" button="" class="btn btn-primary" >
-		<input type="submit" value="豆瓣" id="douban" button="" class="btn btn-primary">
-                <input type="submit" value="值得买" id="duoji" button="" class="btn btn-primary">
-	        <input type="submit" value="京东" id="jd" button="" class="btn btn-primary" >															 
+            <div class="jike">
+            </div>
+            <div class="life">
+            </div> 
+            <div class="bt">
+            </div> 
+        </div> 
+ </div> 
+<template>
+${data.map(function(obj, index){
+    return `<input type="submit" value=${obj.title} class="btn btn-primary" data-url=${obj.url} onclick="change(event)" >,`
+}).join('')
+}
 
-	    </div>
-	    <div class='bt'>
-	    	<input type="submit" value="种子吧" id="duoji" button="" class="btn btn-primary" >
-		<input type="submit" value="超人搜索" id="duoji" button="" class="btn btn-primary" >
-<!-- 		<input type="submit" value="微博" id="weibo" button="" class="btn btn-primary" > -->
-<!-- 		<input type="submit" value="豆瓣" id="douban" button="" class="btn btn-primary">														  -->
+ 
+</template>
 
-	    </div>	    
-	</div>
-    </div>
-										 
-    <script>
-        window.onkeydown = function (e) {  
-            let code = e.keyCode;  
-            if (code == 191) {
-		    document.getElementById("search").focus();  
-		    return false;
-	    	}
-        }
-	var items = document.getElementsByClassName('items')[0];
-        items.addEventListener('click',function(event){
-	    event = event || window.event;
-            if (event.target.className == 'btn btn-primary') {
-            	let searchengine=document.getElementById('searchengine');
-                let value = event.target.value;
-            	searchengine.innerHTML=value;
-            	searchengine.value=value;
-	        }
-        },false);
-        
-        function FindData(){
-            var search=document.getElementById('search');
-            var searchengine=document.getElementById('searchengine');
-            var query=search.value;
-            if(searchengine.value=="百度"){
-                window.open("https://www.baidu.com/s?wd="+query+" -广告 -推广");
-            }else if(searchengine.value=="秘迹"){
-                window.open(`https://m.mijisou.com/?q=${query}&category_general=on&time_range=&language=zh-CN&pageno=1`);
-	    }else if(searchengine.value=="Searx"){
-                window.open("https://wiby.org/?q="+query);
-	    }else if(searchengine.value=="dev谷歌"){
-                window.open("https://search.sxisa.com/search?q="+query);
-	    }else if(searchengine.value=="谷歌"){
-                window.open("https://google.ywg.workers.dev/search?q="+query);    
-	    }else if(searchengine.value=="Google2"){
-                window.open("https://www.sanzhima.com/search?q="+query);	    
-	    }else if(searchengine.value=="多吉"){
-                window.open("https://www.dogedoge.com/results?q="+query);  
-	    }else if(searchengine.value=="360搜索"){
-                window.open("https://www.so.com/s?q="+query);  
-	    }else if(searchengine.value=="神马"){
-                window.open("https://yz.m.sm.cn/s?q="+query);    
-            }else if(searchengine.value=="Yandex"){
-                window.open("https://yandex.com/search/?text="+query);
-            }else if(searchengine.value=="搜狗"){
-                window.open("https://www.sogou.com/web?query="+query);
-            }else if(searchengine.value=="必应"){
-                window.open("http://cn.bing.com/search?q="+query);
-            }else if(searchengine.value=="Magi"){
-                window.open("https://magi.com/search?q="+query);
-            }else if(searchengine.value=="微信"){
-                window.open("http://weixin.sogou.com/weixin?query="+query);
-            }else if(searchengine.value=="京东"){
-                window.open("http://search.jd.com/Search?enc=utf-8&keyword="+query);
-            }else if(searchengine.value=="淘宝"){
-                window.open("https://s.taobao.com/search?q="+query);
-            }else if(searchengine.value=="知乎"){
-                window.open("https://www.zhihu.com/search?q="+query);
-            }else if(searchengine.value=="微博"){
-                window.open("http://s.weibo.com/weibo/"+query);
-            }else if(searchengine.value=="豆瓣"){
-                window.open("https://www.douban.com/search?q="+query);
-            }else if(searchengine.value=="贴吧"){
-                window.open(`http://zhannei.baidu.com/cse/site?q=${query}&click=1&cc=tieba.baidu.com&s=&nsid=`);
-	    }else if(searchengine.value=="Github"){
-                window.open("https://github.com/search?q="+query);
-            // 网盘部分
-            }else if(searchengine.value=="大力盘"){
-                window.open("https://www.dalipan.com/search?keyword="+query+"&time=3");  
-	    }else if(searchengine.value=="飞飞盘"){
-                window.open("https://www.feifeipan.com/search?keyword="+query); 
-	    }else if(searchengine.value=="搜云"){
-                window.open("https://www.wosouyun.com/wd/"+query); 	
-	    }else if(searchengine.value=="罗马盘"){
-                window.open("https://www.luomapan.com/search?keyword="+query); 
-	    }else if(searchengine.value=="Day搜"){
-                window.open("http://www.daysou.com/s?q="+query+"&start=0&isget=1&tp=all&cl=0&line=3");    
-            }else if(searchengine.value=="fastsoso"){
-                window.open("https://www.fastsoso.cn/search?k="+query+'&s=1&t=-1');
-            }else if(searchengine.value=="B站搜索"){
-                window.open("https://search.bilibili.com/all?keyword="+query);
-            }else if(searchengine.value=="猪猪盘"){
-                window.open("http://www.zhuzhupan.com/search?query="+query);
-            }else if(searchengine.value=="酷搜"){
-                window.open("https://www.kolsou.com/search?q="+query);
-            }else if(searchengine.value=="热榜搜"){
-                window.open("https://tophub.today/search?q="+query);
-	    }else if(searchengine.value=="谷歌云"){
-                window.open(`https://zhao.pp.ua/?q=${query}&Hm_lvt_3c8d74f5719912f7fa51a5e9d1ec8096=1633230532137|1600658682,1601653141&version=1.0.1&Hm_lpvt_3c8d74f5719912f7fa51a5e9d1ec8096=1601694532
-`);
-	    }else if(searchengine.value=="极客搜索"){
-                window.open("https://s.geekbang.org/search/c=0/k="+query+'/t=');
-            }else if(searchengine.value=="开发者头条"){
-                window.open("https://toutiao.io/search?q="+query);
-	    }else if(searchengine.value=="阿里云"){
-                window.open("https://developer.aliyun.com/search?q="+query);
-	    }else if(searchengine.value=="腾讯云"){
-                window.open("https://cloud.tencent.com/developer/search/article-"+query);
-	    }else if(searchengine.value=="鱼塘搜索"){
-                window.open("https://mo.fish/main/search/"+query);
-            }else if(searchengine.value=="V2"){
-                window.open("https://google.ywg.workers.dev/search?q=site:v2ex.com/t "+query);
-	    }else if(searchengine.value=="头条"){
-                window.open("https://m.toutiao.com/search?keyword="+query);
-	    }else if(searchengine.value=="值得买"){
-                window.open("https://search.smzdm.com/?c=home&s="+query+"&v=b");
-	    }
-		
-	    else if(searchengine.value=="种子吧"){
-                window.open("http://zhongzi8.xyz/search?wd="+query);
-	    }else if(searchengine.value=="超人搜索"){
-                window.open("https://www.ichaoren.xyz/search.html?name="+query);
-	    }
-							    
-        }
-        
-        document.onkeyup = function (e) {  
-            if (window.event)  
-                e = window.event;  
-            var code = e.charCode || e.keyCode;  
-            if (code == 13) FindData();           
-        } 
-  	
-    </script>
-    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/yuwengeng/jscdn/jquery.fireworks.js"></script>
-    <script type="text/javascript">
-	$(document.getElementsByClassName('life')[0]).fireworks({ 
-	  sound: false, 
-	  opacity: 0.2, 
-	  width: '100%', 
-	  height: '60px' 
-	});
-	  </script>	 -->
-				  
+<script>
+let searchengine=document.getElementById('searchengine');
+function change(event){
+    event = event || window.event;
+    const value = event.target.value;
+    searchengine.innerHTML=value;
+    searchengine.value=value;
+
+    const url = event.target.dataset['url']
+    window.open(url);
+
+}
+let query = 33;
+const json = {
+    "data":[
+        {
+            "title":"百度",
+            "url":"https://www.baidu.com/s?wd=-广告 -推广",
+	    "type":'all'
+        },
+        {
+            "title":"秘迹",
+            "url":"neral=on&time_range=&language=zh-CN&pageno=1"   
+        },
+        {
+            "title":"秘迹",
+            "url":"neral=on&time_range=&language=zh-CN&pageno=1"   
+        },
+        {
+            "title":"秘迹",
+            "url":"neral=on&time_range=&language=zh-CN&pageno=1"   
+        },
+        {
+            "title":"秘迹",
+            "url":"neral=on&time_range=&language=zh-CN&pageno=1"   
+        },
+        {
+            "title":"秘迹",
+            "url":"neral=on&time_range=&language=zh-CN&pageno=1"   
+        }                        
+    ]
+
+}
+
+String.prototype.interpolate = function (params,type) {
+    const names = Object.keys(params);
+    const vals = Object.values(params);
+    let n_vals = vals[0].filter( function(obj){
+        return obj["type"]==type;
+    })
+//      console.log(n_vals)
+//      console.log(vals)
+    return new Function(...names, `return \`${this}\`;`)(...[n_vals]);
+};
+
+let strTemplate = document.querySelector('template').innerHTML;
+fetch('./ajax-article-list.php').then(res => {
+    return res.json();    
+}).then(json => {
+
+let ops_all = strTemplate.interpolate(json,'all');
+let ops_pans = 	strTemplate.interpolate(json,'pans');
+let ops_jike = strTemplate.interpolate(json,'jike')
+let ops_bt = strTemplate.interpolate(json,'bt')
+let ops_life = strTemplate.interpolate(json,'life')
+
+//  console.log(ops.split(',')[])
+let arr_ops = ops.split(',')
+document.querySelector('.all').innerHTML = ops_all;
+document.querySelector('.pans').innerHTML = ops_pans
+document.querySelector('.jike').innerHTML = ops_jike
+document.querySelector('.bt').innerHTML = ops_bt
+document.querySelector('.life').innerHTML = ops_life
+	
+});		 
+</script>
 </body>
 </html>
