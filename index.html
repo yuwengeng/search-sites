@@ -69,8 +69,7 @@
 </head>
 <body>
 
- <div id="main">
-		<div id="searchid">	    
+ <div id="main">			    
 	    	<div id="sform" class="form-inline" role="form">
 	    	        <input name="sears" id="search" type="text" placeholder="find it" autofocus onfocus="this.placeholder=''" onblur="this.placeholder='find it'" autocomplete="off" class="form-control input-lg">
 	    	        <button id="searchengine" value="百度" onclick="FindData();">百度</button>
@@ -100,6 +99,8 @@ ${data.map(function(obj, index){
 
 <script>
 let searchengine=document.getElementById('searchengine');
+const query=document.getElementById('search').value;
+
 function change(event){
     event = event || window.event;
     const value = event.target.value;
@@ -108,38 +109,6 @@ function change(event){
 
     const url = event.target.dataset['url']
     window.open(url);
-
-}
-let query = 33;
-const json = {
-    "data":[
-        {
-            "title":"百度",
-            "url":"https://www.baidu.com/s?wd=-广告 -推广",
-	    "type":'all'
-        },
-        {
-            "title":"秘迹",
-            "url":"neral=on&time_range=&language=zh-CN&pageno=1"   
-        },
-        {
-            "title":"秘迹",
-            "url":"neral=on&time_range=&language=zh-CN&pageno=1"   
-        },
-        {
-            "title":"秘迹",
-            "url":"neral=on&time_range=&language=zh-CN&pageno=1"   
-        },
-        {
-            "title":"秘迹",
-            "url":"neral=on&time_range=&language=zh-CN&pageno=1"   
-        },
-        {
-            "title":"秘迹",
-            "url":"neral=on&time_range=&language=zh-CN&pageno=1"   
-        }                        
-    ]
-
 }
 
 String.prototype.interpolate = function (params,type) {
