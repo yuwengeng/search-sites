@@ -37,7 +37,7 @@
     }
 		   
 	#search{
-            width: 70%;
+            width: 70vw;
 	    text-align: center;
  	    line-height: 36px;	
 	    height: 36px;
@@ -69,7 +69,7 @@
 </head>
 <body>
 
- <div id="main">			    
+ <main id="main">			    
 	    	<div id="sform" class="form-inline" role="form">
 	    	        <input name="sears" id="search" type="text" placeholder="find it" autofocus onfocus="this.placeholder=''" onblur="this.placeholder='find it'" autocomplete="off" class="form-control input-lg">
 	    	        <button id="searchengine" value="百度" onclick="FindData();">百度</button>
@@ -86,8 +86,8 @@
             </div> 
             <div class="bt">
             </div> 
-        </div> 
- </div> 
+    </div> 
+ </main> 
 <template>
 ${data.map(function(obj, index){
     return `<input type="submit" value=${obj.title} class="btn btn-primary" data-url=${obj.url} onclick="change(event)" >,`
@@ -118,23 +118,20 @@ String.prototype.interpolate = function (params,type) {
         return obj["type"]==type;
     })
 //      console.log(n_vals)
-//      console.log(vals)
     return new Function(...names, `return \`${this}\`;`)(...[n_vals]);
 };
 
 let strTemplate = document.querySelector('template').innerHTML;
-fetch('./ajax-article-list.php').then(res => {
+fetch('https://mock.cangdu.org/mock/5e672e3fae8a4a789d364302/example/').then(res => {
     return res.json();    
 }).then(json => {
-
+    // console.log(json.data)
 let ops_all = strTemplate.interpolate(json,'all');
 let ops_pans = 	strTemplate.interpolate(json,'pans');
 let ops_jike = strTemplate.interpolate(json,'jike')
 let ops_bt = strTemplate.interpolate(json,'bt')
 let ops_life = strTemplate.interpolate(json,'life')
 
-//  console.log(ops.split(',')[])
-let arr_ops = ops.split(',')
 document.querySelector('.all').innerHTML = ops_all;
 document.querySelector('.pans').innerHTML = ops_pans
 document.querySelector('.jike').innerHTML = ops_jike
