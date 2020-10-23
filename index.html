@@ -37,7 +37,7 @@
     }
 		   
 	#search{
-            width: 70vw;
+        width: 70vw;
 	    text-align: center;
  	    line-height: 36px;	
 	    height: 36px;
@@ -52,14 +52,14 @@
 	#searchengine{
 	    line-height: 32px;	
 	    height: 32px;	
-	}
-	    
+	}  
 	    
     .items{
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-	max-width: 800px;
+	    /* max-width: 90vw; */
+        padding:0 6vw;
     }
     .items div{
         margin: 16px auto;
@@ -71,8 +71,8 @@
 
  <main id="main">			    
 	    	<div id="sform" class="form-inline" role="form">
-	    	        <input name="sears" id="search" type="text" placeholder="find it" autofocus onfocus="this.placeholder=''" onblur="this.placeholder='find it'" autocomplete="off" class="form-control input-lg">
-	    	        <button id="searchengine" value="百度" onclick="FindData();">百度</button>
+	    	        <input id="search" type="text" placeholder="find it" autofocus onfocus="this.placeholder=''" onblur="this.placeholder='find it'" autocomplete="off" class="form-control input-lg">
+	    	        <button id="searchengine" data-url1="" value="百度" onclick="FindData(event);">百度</button>
 	    	</div>	
 		
 	<div class="items">
@@ -90,24 +90,32 @@
  </main> 
 <template>
 ${data.map(function(obj, index){
-    return `<input type="submit" value=${obj.title} class="btn btn-primary" data-url=${obj.url} onclick="change(event)" >,`
+    return `<input type="submit" value=${obj.title} class="btn btn-primary" data-url=${obj.url} onclick="change(event)" >`
 }).join('')
 }
-
- 
 </template>
 
 <script>
 let searchengine=document.getElementById('searchengine');
-const query=document.getElementById('search').value;
-
+    const query=document.getElementById('search').value;
+    console.log(query)
 function change(event){
-    event = event || window.event;
+    let search=document.getElementById('search');
+    let query = search.value
     const value = event.target.value;
     searchengine.innerHTML=value;
-    searchengine.value=value;
 
     const url = event.target.dataset['url']
+    searchengine.dataset["url1"]=url;
+    var str =  'return ' + '`'+url+'`'
+    let func = new Function('query', str);
+    const loc = func(query);
+    // console.log(typeof url)
+    window.open(loc);
+
+}
+function FindData(event){
+    const url = event.target.dataset['url1']
     window.open(url);
 }
 
@@ -118,6 +126,7 @@ String.prototype.interpolate = function (params,type) {
         return obj["type"]==type;
     })
 //      console.log(n_vals)
+//      console.log(vals)
     return new Function(...names, `return \`${this}\`;`)(...[n_vals]);
 };
 
