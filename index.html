@@ -18,17 +18,26 @@
         position:relative;
         z-index:999;
 	}
-    div#main{
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        margin-top: -80px;
+    main{
+        /* display: flex; */
+        /* justify-content: center; */
+        /* align-content: center; */
+        width:100%;
+        height:100%;
+        /* margin-top: -70px; */
     }
-    input[type="submit"]{height:28px}
+    input[type="submit"]{
+        height:28px;
+        margin-right:3px;
+        vertical-align:top;
+    }
+    input[type="submit"]:hover{
+        background:lightblue;
+    }
 /* 搜索框 */
     .form-inline{
         text-align: center;
-        margin: 130px auto 20px;
+        margin: 83px auto 20px;
     }
     .form-inline button{
 	height:36px;
@@ -39,7 +48,7 @@
     }
 		   
 	#search{
-        width: 70vw;
+        width: 66vw;
 	    text-align: center;
  	    line-height: 36px;	
 	    height: 36px;
@@ -74,16 +83,16 @@
     </style>
 </head>
 <body>
-<div class="yanhua">
-    <canvas id="fireworksField" width="685" height="635" style="position: absolute; top: 0px; left: 0px; opacity: 0.9;"></canvas>
-</div>	
+
  <main id="main">		
-                
+    
 	    	<div id="sform" class="form-inline" role="form">
 	    	        <input id="search" type="text" placeholder="find it" autofocus onfocus="this.placeholder=''" onblur="this.placeholder='find it'" autocomplete="off" class="form-control input-lg">
 	    	        <button id="searchengine" data-url1="" value="百度" onclick="FindData(event);">百度</button>
 	    	</div>	
-		
+           <div class="yanhua">
+                <canvas id="fireworksField" width="526" height="435" style="position: absolute; top: 0px; left: 0px; opacity: 0.9;"></canvas>
+            </div>	 		
 	<div class="items">
             <div class="all">
             </div>  
