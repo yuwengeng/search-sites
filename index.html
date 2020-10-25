@@ -10,7 +10,8 @@
 	html{	
 		font-family: "STKaiti" ,"Microsoft Yahei";
 		background:url('https://api.uixsj.cn/bing/bing.php') no-repeat;
-		background-size:cover;
+                background-position:center center;
+		background-attachment:fixed;
 		width:100vw;
         	height:100vh;
 		background-position: center top;
@@ -75,11 +76,15 @@
     .yanhua{
         position:relative;
         z-index:-99;
+        display:flex;
+        left:50%;
+        transform: translate(-50%, -50%);
     }
     canvas{
         width:95vw;
-        text-align:center;
-    }
+        height:66vh;
+        justify-content:center;
+        align-items:center;    }
     </style>
 </head>
 <body>
@@ -153,7 +158,7 @@ document.querySelector('.all').innerHTML = ops_all;
 document.querySelector('.pans').innerHTML = ops_pans
 document.querySelector('.jike').innerHTML = ops_jike
 document.querySelector('.bt').innerHTML = ops_bt
-document.querySelector('.life').innerHTML = ops_life	
+document.querySelector('.life').innerHTML = ops_life;	
 });		 
 </script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
