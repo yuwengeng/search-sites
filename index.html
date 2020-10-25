@@ -8,20 +8,18 @@
     <link rel="icon" type="image/png" href="https://s3.jpg.cm/2020/07/02/czB7u.png"/>
     <style>
 	html{	
-		font-family: STKaiti;
+		font-family: "STKaiti" ,"Microsoft Yahei";
 		background:url('https://api.uixsj.cn/bing/bing.php') no-repeat;
 		background-size:cover;
 		width:100vw;
-        height:100vh;
+        	height:100vh;
 		background-position: center top;
 		margin:0;
+        padding:0;
         position:relative;
         z-index:999;
 	}
     main{
-        /* display: flex; */
-        /* justify-content: center; */
-        /* align-content: center; */
         width:100%;
         height:100%;
         /* margin-top: -70px; */
@@ -45,10 +43,9 @@
     }
     .form-inline button{
 	height:36px;
-    }
-		   
+    }	   
 	#search{
-        width: 66vw;
+            width: 66vw;
 	    text-align: center;
  	    line-height: 36px;	
 	    height: 36px;
@@ -63,8 +60,7 @@
 	#searchengine{
 	    line-height: 32px;	
 	    height: 32px;	
-	}  
-	    
+	}      
     .items{
         display: flex;
         justify-content: center;
@@ -80,30 +76,30 @@
         position:relative;
         z-index:-99;
     }
+    canvas{
+        width:95vw;
+        text-align:center;
+    }
     </style>
 </head>
 <body>
-
- <main id="main">		
-    
+ <main id="main">		 
 	    	<div id="sform" class="form-inline" role="form">
 	    	        <input id="search" type="text" placeholder="find it" autofocus onfocus="this.placeholder=''" onblur="this.placeholder='find it'" autocomplete="off" class="form-control input-lg">
 	    	        <button id="searchengine" data-url1="" value="百度" onclick="FindData(event);">百度</button>
 	    	</div>	
            <div class="yanhua">
-                <canvas id="fireworksField" width="526" height="435" style="position: absolute; top: 0px; left: 0px; opacity: 0.9;"></canvas>
+                <canvas id="fireworksField" style="position: absolute; top: 0px; left: 0px; opacity: 0.9;"></canvas>
             </div>	 		
 	<div class="items">
-            <div class="all">
-            </div>  
+            <div class="all"></div>  
             <div class="pans">
             </div>
             <div class="jike">
             </div>
             <div class="life">
             </div> 
-            <div class="bt">
-            </div> 
+            <div class="bt"></div> 
     </div> 
  </main> 
 <template>
@@ -114,12 +110,11 @@ ${data.map(function(obj, index){
 </template>
 
 <script>
-let searchengine=document.getElementById('searchengine');
-    const query=document.getElementById('search').value;
-    console.log(query)
+let searchengine=document.getElementById('searchengine'),
+    query=document.getElementById('search').value;
 function change(event){
-    let search=document.getElementById('search');
-    let query = search.value
+    let search=document.getElementById('search'),
+        query = search.value;
     const value = event.target.value;
     searchengine.innerHTML=value;
 
@@ -128,9 +123,7 @@ function change(event){
     var str =  'return ' + '`'+url+'`'
     let func = new Function('query', str);
     const loc = func(query);
-    // console.log(typeof url)
     window.open(loc);
-
 }
 function FindData(event){
     const url = event.target.dataset['url1']
@@ -143,8 +136,6 @@ String.prototype.interpolate = function (params,type) {
     let n_vals = vals[0].filter( function(obj){
         return obj["type"]==type;
     })
-//      console.log(n_vals)
-//      console.log(vals)
     return new Function(...names, `return \`${this}\`;`)(...[n_vals]);
 };
 
@@ -152,7 +143,6 @@ let strTemplate = document.querySelector('template').innerHTML;
 fetch('https://mock.cangdu.org/mock/5e672e3fae8a4a789d364302/example/').then(res => {
     return res.json();    
 }).then(json => {
-    // console.log(json.data)
 let ops_all = strTemplate.interpolate(json,'all');
 let ops_pans = 	strTemplate.interpolate(json,'pans');
 let ops_jike = strTemplate.interpolate(json,'jike')
@@ -163,19 +153,18 @@ document.querySelector('.all').innerHTML = ops_all;
 document.querySelector('.pans').innerHTML = ops_pans
 document.querySelector('.jike').innerHTML = ops_jike
 document.querySelector('.bt').innerHTML = ops_bt
-document.querySelector('.life').innerHTML = ops_life
-	
+document.querySelector('.life').innerHTML = ops_life	
 });		 
 </script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/yuwengeng/jscdn/jquery.fireworks.js"></script>
-    <script type="text/javascript">
+<script src="https://cdn.jsdelivr.net/gh/yuwengeng/jscdn/jquery.fireworks.js"></script>
+<script type="text/javascript">
 	$(document.getElementsByClassName('yanhua')[0]).fireworks({ 
 	  sound: false, 
 	  opacity: 0.8, 
 	  width: '100%', 
 	  height: '100%' 
 	});
-     </script>
+</script>
 </body>
 </html>
