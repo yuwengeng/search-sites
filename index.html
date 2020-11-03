@@ -107,6 +107,7 @@
             <div class="life">
             </div> 
             <div class="bt"></div> 
+            <div class="index"></div>
     </div> 
  </main> 
 <template>
@@ -155,12 +156,14 @@ let ops_pans = 	strTemplate.interpolate(json,'pans');
 let ops_jike = strTemplate.interpolate(json,'jike')
 let ops_bt = strTemplate.interpolate(json,'bt')
 let ops_life = strTemplate.interpolate(json,'life')
+let ops_index = strTemplate.interpolate(json,'index')
 
 document.querySelector('.all').innerHTML = ops_all;
 document.querySelector('.pans').innerHTML = ops_pans
 document.querySelector('.jike').innerHTML = ops_jike
 document.querySelector('.bt').innerHTML = ops_bt
 document.querySelector('.life').innerHTML = ops_life;	
+document.querySelector('.index').innerHTML = ops_index;
 });		 
 </script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
