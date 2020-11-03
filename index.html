@@ -134,13 +134,10 @@ function change(event){
     window.open(loc);
 }
 function FindData(event){
-    const url = event.target.dataset['url1']
-    let search=document.getElementById('search'),
-        query = search.value;
-    var str =  'return ' + '`'+url+'`'
+    const url = event.target.dataset['url1'],
+          str =  'return ' + '`'+url+'`'
     let func = new Function('query', str);
-    const loc = func(query);
-    window.open(loc);
+    window.open(func(query));
 }
 
 String.prototype.interpolate = function (params,type) {
