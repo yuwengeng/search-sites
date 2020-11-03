@@ -94,7 +94,7 @@
  <main id="main">		 
 	    	<div id="sform" class="form-inline" role="form">
 	    	        <input id="search" type="text" placeholder="find it" autofocus onfocus="this.placeholder=''" onblur="this.placeholder='find it'" autocomplete="off" class="form-control input-lg">
-	    	        <button id="searchengine" data-url1="" value="百度" onclick="FindData(event);">百度</button>
+	    	        <button id="searchengine" data-url1=`https://www.baidu.com/s?wd=${query} -广告 -推广` value="百度" onclick="FindData(event);">百度</button>
 	    	</div>	
            <div class="yanhua">
             </div>	 		
@@ -135,7 +135,12 @@ function change(event){
 }
 function FindData(event){
     const url = event.target.dataset['url1']
-    window.open(url);
+    let search=document.getElementById('search'),
+        query = search.value;
+    var str =  'return ' + '`'+url+'`'
+    let func = new Function('query', str);
+    const loc = func(query);
+    window.open(loc);
 }
 
 String.prototype.interpolate = function (params,type) {
