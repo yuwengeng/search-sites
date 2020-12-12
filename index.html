@@ -172,7 +172,7 @@ String.prototype.interpolate = function (params,type) {
 };
 
 let strTemplate = document.querySelector('template').innerHTML;
-fetch('https://mock.cangdu.org/mock/5e672e3fae8a4a789d364302/example/').then(res => {
+fetch('https://mock.cangdu.org/mock/5fd48304cec70c1dfb5b53a7/my_search_api').then(res => {
     return res.json();    
 }).then(json => {
 let ops_all = strTemplate.interpolate(json,'all');
