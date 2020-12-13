@@ -147,7 +147,7 @@ function change(event){
         query = search.value;
     const value = event.target.value;
     searchengine.innerHTML=value;
-
+    searchengine.value = value;
     const url = event.target.dataset['url']
     searchengine.dataset["url1"]=url;
     var str =  'return ' + '`'+url+'`'
