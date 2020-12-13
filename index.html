@@ -144,10 +144,10 @@ let searchengine=document.getElementById('searchengine'),
     query=document.getElementById('search').value;
 function change(event){
     let search=document.getElementById('search'),
-        query = search.value;
-    const value = event.target.value;
+        query = search.value,
+        value = event.target.value;
     searchengine.innerHTML=value;
-    searchengine.value = value;
+    searchengine.value = query;
     const url = event.target.dataset['url']
     searchengine.dataset["url1"]=url;
     var str =  'return ' + '`'+url+'`'
