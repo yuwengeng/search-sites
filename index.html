@@ -157,6 +157,7 @@ function change(event){
 }
 function FindData(event){
     const url = event.target.dataset['url1'],
+	  query = event.target.value,
           str =  'return ' + '`'+url+'`'
     let func = new Function('query', str);
     window.open(func(query));
