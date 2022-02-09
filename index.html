@@ -102,6 +102,10 @@
 		}
 	</style>
 <script>
+importScripts('https://g.alicdn.com/kg/workbox/3.3.0/workbox-sw.js');
+workbox.setConfig({
+  modulePathPrefix: 'https://g.alicdn.com/kg/workbox/3.3.0/'
+});
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
             navigator.serviceWorker.register('/sw.js');
