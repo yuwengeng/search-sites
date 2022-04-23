@@ -16,7 +16,7 @@ function renderHTML(document,resolve){
 
     let strTemplate = document.querySelector('template').innerHTML;
 
-  axios.get('https://cdn.jsdelivr.net/gh/yuwengeng/jscdn@master/search.json').then(res=>{
+  axios.get('https://crud.ywg.workers.dev/get?key=searchData').then(res=>{
           const json = res.data;
           let ops_all = strTemplate.interpolate(json,'all');
         let ops_pans =  strTemplate.interpolate(json,'pans');

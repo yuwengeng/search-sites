@@ -19,7 +19,7 @@ jobs:
         
     - name: 'Install NPM dependencies'
       run: 
-        npm install axios jsdom node-schedule dotenv-extended
+        npm install axios jsdom 
         
     - name: Run
       run: node index.js
