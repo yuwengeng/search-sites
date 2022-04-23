@@ -1,0 +1,28 @@
+name: Server Render Search
+
+on:
+  push:
+    branches:    
+      - master
+
+jobs:
+  build:
+    name: My Send
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+        
+    - name: 'Install NPM dependencies'
+      run: 
+        npm install axios jsdom 
+        
+    - name: Run
+      run: node index.js
+      env:
+        API: ${{ secrets.API }}    
+    

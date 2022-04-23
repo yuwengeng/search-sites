@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0,  minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta http-equiv="x-dns-prefetch-control" content="on">
+	<link rel="dns-prefetch" href="https://cdn.jsdelivr.net/">
+	<title>罗网</title>
+	<link rel="icon" type="image/png" href="https://s3.jpg.cm/2020/07/02/czB7u.png" />
+	<style>
+		html {
+			font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			font-size: calc(10px + 0.33vw);
+			background: url('https://api.uixsj.cn/bing/bing.php') no-repeat;
+			background-attachment: fixed;
+			width: 100vw;
+			height: 100vh;
+			background-size: cover;
+			margin: 0;
+			padding: 0;
+			position: relative;
+			z-index: 999;
+		}
+		main {
+			width: 100%;
+			height: 100%;
+			/* margin-top: -70px; */
+		}
+		input[type="submit"],
+		button {
+			height: 28px;
+			margin-right: calc(0.3vw + 2px);
+			vertical-align: top;
+			border-radius: 3px;
+			border-width: 0;
+			outline: 0;
+			cursor: pointer;
+		}
+
+		input[type="submit"]:hover {
+			background: lightblue;
+			transform: scale(1.3);
+		}
+
+		/* 搜索框 */
+		.form-inline {
+			text-align: center;
+			margin: 83px auto 20px;
+		}
+
+		.form-inline button {
+			height: 36px;
+			vertical-align: middle;
+		}
+
+		.form-inline button {
+			height: 36px;
+		}
+
+		#search {
+			width: 66vw;
+			text-align: center;
+			line-height: 36px;
+			height: 36px;
+			border-radius: 16px;
+			font-size: 13.3333px;
+			font-weight: 400;
+			outline: none;
+			border: none;
+		}
+
+		input:placeholder {
+			color: #fafafa8a;
+		}
+
+		.items {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			/* max-width: 90vw; */
+			padding: 0 6vw;
+		}
+
+		.items div {
+			margin: 16px 2vw;
+			text-align: center;
+		}
+
+		.yanhua {
+			position: relative;
+			z-index: -99;
+			display: flex;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		canvas {
+			width: 99.66%;
+			height: 76vh;
+			justify-content: center;
+			align-items: center;
+		}
+	</style>
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/sw.js');
+        });
+    }
+</script>
+</head>
+
+<body>
+	<main id="main">
+		<div id="sform" class="form-inline" role="form">
+			<input id="search" type="text" placeholder="find it" autofocus onfocus="this.placeholder=''" onblur="this.placeholder='find it'" autocomplete="off" class="form-control input-lg">
+	    	        <button id="searchengine" data-url1=`https://www.baidu.com/s?wd=${query} -广告 -推广` value="百度" onclick="FindData(event);">百度</button>
+	    	</div>	
+           <div class="yanhua">
+            </div>	 		
+	<div class="items">
+            <div class="all"></div>  
+            <div class="pans">
+            </div>
+            <div class="jike">
+            </div>
+            <div class="life">
+            </div> 
+            <div class="bt"></div> 
+            <div class="index"></div>
+            <div class="ai"></div>
+		
+    </div> 
+ </main> 
+<template>
+${data.map(function(obj, index){
+    return `<input type="submit" value=${obj.title} class="btn btn-primary" data-url=${obj.url} onclick="change(event)" >`
+}).join('')
+}
+</template>
+
+<script>
+let searchengine=document.getElementById('searchengine'),
+    query=document.getElementById('search').value;
+function change(event){
+    let search=document.getElementById('search'),
+        query = search.value,
+        value = event.target.value;
+    searchengine.innerHTML=value;
+    searchengine.value = query;
+    const url = event.target.dataset['url']
+    searchengine.dataset["url1"]=url;
+    var str =  'return ' + '`'+url+'`'
+    let func = new Function('query', str);
+    const loc = func(query);
+    window.open(loc);
+}
+function FindData(event){
+    const url = event.target.dataset['url1'],
+	  query = event.target.value,
+          str =  'return ' + '`'+url+'`'
+    let func = new Function('query', str);
+    window.open(func(query));
+}
+	 
+</script>
+</body>
+</html>
