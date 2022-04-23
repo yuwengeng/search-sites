@@ -24,5 +24,6 @@ jobs:
     - name: Run
       run: node index.js
       env:
-        API: ${{ secrets.API }}    
+        API: ${{ secrets.API }} 
+        TOKEN: ${{ secrets.TOKEN }}   
     
