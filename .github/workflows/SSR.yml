@@ -1,10 +1,9 @@
 name: Server Render Search
 
 on:
-  push:
-    branches:    
-      - master
-
+  repository_dispatch:
+    types:
+      - webhook-1
 jobs:
   build:
     name: My Send
