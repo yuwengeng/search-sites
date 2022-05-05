@@ -18,21 +18,24 @@ function renderHTML(document,resolve){
 
   axios.get('https://crud.ywg.workers.dev/get?key=searchData').then(res=>{
           const json = res.data;
-          let ops_all = strTemplate.interpolate(json,'all');
-        let ops_pans =  strTemplate.interpolate(json,'pans');
-        let ops_jike = strTemplate.interpolate(json,'jike')
-        let ops_bt = strTemplate.interpolate(json,'bt')
-        let ops_life = strTemplate.interpolate(json,'life')
-        let ops_index = strTemplate.interpolate(json,'index')
-        let ops_ai = strTemplate.interpolate(json,'ai')
+          const setWrapper = new Set();
+          const y = json.data
 
-        document.querySelector('.all').innerHTML = ops_all;
-        document.querySelector('.pans').innerHTML = ops_pans
-        document.querySelector('.jike').innerHTML = ops_jike
-        document.querySelector('.bt').innerHTML = ops_bt
-        document.querySelector('.life').innerHTML = ops_life;   
-        document.querySelector('.index').innerHTML = ops_index;
-        document.querySelector('.ai').innerHTML = ops_ai;  
+            y.forEach(i=> {
+                if(setWrapper.has(i.type)) return;
+                setWrapper.add(i.type)
+                });
+          
+          console.log('setWrapper',setWrapper)
+          const oFragmeng = document.createDocumentFragment(); 
+
+          setWrapper.forEach(i=>{
+            const op = document.createElement("div");
+            op.className  = i;
+            op.innerHTML = strTemplate.interpolate(json,i);
+            oFragmeng.appendChild(op); 
+          })
+        document.querySelector('.items').appendChild(oFragmeng);  
         // console.log('ai',document.querySelector('.ai').textContent,ops_ai)
         let html = document.querySelector("html").outerHTML;
          resolve(html)
