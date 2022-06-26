@@ -41,7 +41,26 @@
 			transform: scale(1.3);
 		}
 
-		/* 搜索框 */
+		.columNav{
+			position: fixed;
+		    left: 0.6vw;
+		    top: 50%;
+		    background: rgba(0,0,0,0.5);
+		    transform: translateY(-50%);
+		    border-radius: 4px;
+		    width: 7vw;
+		    color: white;
+		}
+		.columNav > li{
+			list-style: none;
+		    text-align: center;
+		    line-height: 4vh;
+		    cursor: pointer;
+		}
+		.columNav > li:hover{
+			background: #2d52d1;
+			border-radius: 4px;
+		}		/* 搜索框 */
 		.form-inline {
 			text-align: center;
 			margin: 83px auto 20px;
@@ -121,6 +140,8 @@
 	<div class="items">
     </div> 
  </main> 
+  <nav class="columNav">
+ </nav> 
 <template>
 ${data.map(function(obj, index){
     return `<input type="submit" value=${obj.title} class="btn btn-primary" data-url=${obj.url} onclick="change(event)" >`
@@ -151,7 +172,27 @@ function FindData(event){
     let func = new Function('query', str);
     window.open(func(query));
 }
-	 
+
+
+// 生成navs
+const navs = document.getElementsByClassName('items')[0].children
+
+let ul = ''
+
+Array.prototype.forEach.call(navs,(item,index)=>{
+	console.log(item.className)
+	ul +=(`
+	<li>${item.className}</li>
+	`)
+
+})
+
+
+document.getElementsByClassName('columNav')[0].innerHTML = ul;
+
+	// const a = document.getElementsByClassName('pans')[0]
+	// document.getElementsByClassName('items')[0].innerHTML = a.innerHTML	
+
 </script>
 </body>
 </html>
