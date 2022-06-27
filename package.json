@@ -2,5 +2,23 @@
   "dependencies": {
     "axios": "^0.27.2",
     "jsdom": "^19.0.0"
-  }
+  },
+  "name": "search-sites",
+  "description": "自定义搜索聚合",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuwengeng/search-sites.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuwengeng/search-sites/issues"
+  },
+  "homepage": "https://github.com/yuwengeng/search-sites#readme"
 }
